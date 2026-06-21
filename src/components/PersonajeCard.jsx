@@ -1,12 +1,14 @@
 function PersonajeCard(props) {
-    const {char} = props;
+    const { char } = props;
 
     return (
-        <div>
+        <div className="card" >
             <img src={char.image} alt={char.name} />
-            <h3>{char.name}</h3>
-            <p><strong>Especie:</strong> {char.species}</p>
-            <p><strong>Estado:</strong> {char.status}</p>
+            <div className="card-content">
+                <h3>{char.name}</h3>
+                <p><strong>Especie:</strong> {char.species}</p>
+                <p><strong>Estado:</strong> {char.status}</p>
+            </div>
         </div>
     );
 }

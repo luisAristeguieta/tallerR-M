@@ -19,9 +19,9 @@ function App() {
 
 
   return (
-    <div>
-      <h1>The Rick and Morty Character</h1>
-      <div>
+    <div >
+      <h1>The Rick & Morty · Multiverse Directory</h1>
+      <div className="personajes-grid" >
           {characters.map((char)=>(
             <PersonajeCard key={char.id} char={char}/>
           ))}
