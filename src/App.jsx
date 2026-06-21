@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import './App.css'
+import PersonajeCard from './components/PersonajeCard';
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -8,7 +9,8 @@ function App() {
     const getCharacters = async () => {
       const response = await fetch('https://rickandmortyapi.com/api/character');
       const data = await response.json();
-      setCharacters(data.results);
+      // Solo 12 personajes usando slice: 
+      setCharacters(data.results.slice(0,12));
     };
 
     getCharacters();
@@ -20,8 +22,8 @@ function App() {
     <div>
       <h1>The Rick and Morty Character</h1>
       <div>
-          {characters.map(()=>(
-            </>
+          {characters.map((char)=>(
+            <PersonajeCard key={char.id} char={char}/>
           ))}
       </div>
 
